@@ -1,0 +1,11 @@
+services:
+  go-dev:
+    image: golang:1.26-alpine
+    container_name: go_workspace
+    tty: true
+    volumes:
+      - .:/app
+    working_dir: /app
+    environment:
+      - CGO_ENABLED=0
+    command: sh
