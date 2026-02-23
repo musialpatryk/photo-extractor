@@ -33,6 +33,6 @@ jobs:
         run: |
           gh release create ${{ github.ref_name }} \
             ./photo-extractor-linux \
-            ./photo-extractor.exe \
+            ./photo-extractor-windows.exe \
             --title "Release ${{ github.ref_name }}" \
             --notes "Automated build for version ${{ github.ref_name }}"
