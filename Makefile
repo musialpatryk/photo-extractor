@@ -26,6 +26,7 @@ init:
 build-linux:
 	docker exec -it $(CONTAINER_NAME) mkdir -p $(BIN_DIR)
 	docker exec -e GOOS=linux -e GOARCH=amd64 $(CONTAINER_NAME) go build -o $(BIN_DIR)/$(APP_NAME)-linux ./cmd/extractor
+	docker exec $(CONTAINER_NAME) chmod +x $(BIN_DIR)/$(APP_NAME)-linux
 
 build-windows:
 	docker exec -it $(CONTAINER_NAME) mkdir -p $(BIN_DIR)
